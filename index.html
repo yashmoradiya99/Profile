@@ -409,7 +409,7 @@
 
             <div class="wrapper">
 
-              <form action="" class="contact-form">
+              <form id="contactForm" action="https://formspree.io/f/xldjeqwn" method="POST">
 
                 <input type="text" name="name" placeholder="Name" required class="contact-input">
 
@@ -420,6 +420,8 @@
                 <button type="submit" class="btn-submit">Submit Message</button>
 
               </form>
+              
+
 
               <ul class="contact-list">
 
@@ -476,9 +478,52 @@
         </div>
       </section>
 
+      
+    <!-- Thank You Popup -->
+<div id="thankYouPopup" style="display:none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%) scale(0.8); background: white; padding: 30px; border-radius: 12px; box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.3); text-align: center; transition: 0.3s ease-in-out; opacity: 0; min-width: 280px;">
+  <h2 style="color: #333; margin-bottom: 10px;">🎉 Thank You! 🎉</h2>
+  <p style="color: #666; font-size: 16px; margin-bottom: 20px;">Your message has been sent successfully.</p>
+  <div style="display: flex; justify-content: center;">
+      <button onclick="closePopup()" style="background-color: red; color: white; padding: 12px 25px; border: none; border-radius: 8px; cursor: pointer; font-size: 16px; transition: 0.2s ease-in-out;">OK</button>
+  </div>
+</div>
 
+<script>
+  document.getElementById("contactForm").addEventListener("submit", async function(event) {
+      event.preventDefault(); // Stop default form submission
 
+      const formData = new FormData(this);
 
+      try {
+          let response = await fetch(this.action, {
+              method: "POST",
+              body: formData,
+              headers: { "Accept": "application/json" }
+          });
+
+          if (response.ok) {
+              this.reset(); // Clear form fields
+              let popup = document.getElementById("thankYouPopup");
+              popup.style.display = "block"; // Show popup
+              setTimeout(() => {
+                  popup.style.opacity = "1";
+                  popup.style.transform = "translate(-50%, -50%) scale(1)";
+              }, 50);
+          } else {
+              alert("Error! Please try again.");
+          }
+      } catch (error) {
+          alert("Failed to send message.");
+      }
+  });
+
+  function closePopup() {
+      let popup = document.getElementById("thankYouPopup");
+      popup.style.opacity = "0";
+      popup.style.transform = "translate(-50%, -50%) scale(0.8)";
+      setTimeout(() => { popup.style.display = "none"; }, 300);
+  }
+</script>
 
       <!-- 
         - #BLOG
