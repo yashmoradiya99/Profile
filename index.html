@@ -530,82 +530,128 @@
         - #BLOG
       -->
 
+      <style>
+        .blog .blog-list {
+          list-style: none;
+          padding: 0;
+          display: grid;
+          gap: 30px;
+          grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        }
+      
+        .blog-card {
+          background: #fff;
+          padding: 20px;
+          border-radius: 12px;
+          box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+          transition: transform 0.3s;
+        }
+      
+        .blog-card:hover {
+          transform: translateY(-5px);
+        }
+      
+        .card-banner {
+          width: 100%;
+          height: 220px;
+          overflow: hidden;
+          border-radius: 10px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+      
+        .card-banner img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          display: block;
+        }
+      
+        .card-tag {
+          display: inline-block;
+          margin: 15px 0 10px;
+          color: #0077cc;
+          font-weight: 600;
+          font-size: 14px;
+          text-decoration: none;
+        }
+      
+        .card-title a {
+          color: #222;
+          text-decoration: none;
+          font-size: 18px;
+          font-weight: 600;
+          line-height: 1.4;
+        }
+      
+        .section-title {
+          font-size: 32px;
+          margin-bottom: 20px;
+        }
+      
+        .section-subtitle {
+          color: #888;
+          font-size: 16px;
+          margin-bottom: 5px;
+        }
+      </style>
+      
+      <!-- Blog Section -->
       <section class="section blog" id="blog">
         <div class="container">
-
+      
           <p class="section-subtitle">Latest News</p>
-
           <h2 class="h2 section-title">Checkout My Recent Blogs</h2>
-
-         
-
+      
           <ul class="blog-list">
-
+      
             <li>
               <div class="blog-card">
-
                 <figure class="card-banner">
                   <a href="https://medium.com/@moradiyayash9962/how-i-built-an-online-jewelry-store-with-php-and-flutter-6e68c2eede87" target="_blank">
-                    <img src="./assets/images/blog-1.jpg" width="1181" height="843" loading="lazy"
-                      alt="How I Built an Online Jewelry Store Application with PHP and Flutter." class="img-cover">
+                    <img src="./assets/images/blog-1.jpg" alt="Jewelry Store with PHP and Flutter">
                   </a>
                 </figure>
-
-                <a href="https://medium.com/@moradiyayash9962/how-i-built-an-online-jewelry-store-with-php-and-flutter-6e68c2eede87" target="_blank" class="card-tag">Flutter Application Development</a>
-
+                <a href="https://medium.com/@moradiyayash9962/how-i-built-an-online-jewelry-store-with-php-and-flutter-6e68c2eede87" class="card-tag" target="_blank">Flutter Application Development</a>
                 <h3 class="card-title">
                   <a href="https://medium.com/@moradiyayash9962/how-i-built-an-online-jewelry-store-with-php-and-flutter-6e68c2eede87" target="_blank">How I Built an Online Jewelry Store Application with PHP and Flutter.</a>
                 </h3>
-
               </div>
             </li>
-
+      
             <li>
               <div class="blog-card">
-
                 <figure class="card-banner">
                   <a href="https://medium.com/@moradiyayash9962/a-guide-to-supabase-why-i-chose-it-for-various-project-29be9340b2e4" target="_blank">
-                    <img src="./assets/images/blog-2.jpg" width="1181" height="843" loading="lazy"
-                      alt="Website making" class="img-cover">
+                    <img src="./assets/images/blog-2.jpg" alt="Supabase Guide">
                   </a>
                 </figure>
-
-                <a href="https://medium.com/@moradiyayash9962/a-guide-to-supabase-why-i-chose-it-for-various-project-29be9340b2e4" target="_blank" class="card-tag">Web Development</a>
-
+                <a href="https://medium.com/@moradiyayash9962/a-guide-to-supabase-why-i-chose-it-for-various-project-29be9340b2e4" class="card-tag" target="_blank">Web Development</a>
                 <h3 class="card-title">
                   <a href="https://medium.com/@moradiyayash9962/a-guide-to-supabase-why-i-chose-it-for-various-project-29be9340b2e4" target="_blank">A Guide to Supabase: Why I Chose It for My Various Project.</a>
                 </h3>
-
               </div>
             </li>
-
+      
             <li>
               <div class="blog-card">
-
                 <figure class="card-banner">
                   <a href="https://medium.com/@moradiyayash9962/how-i-built-a-faculty-attendance-android-app-with-firebase-d80781d0f2f3" target="_blank">
-                    <img src="./assets/images/blog-3.jpg" width="1181" height="843" loading="lazy"
-                      alt="JAva language use" class="img-cover">
+                    <img src="./assets/images/blog-3.jpg" alt="Faculty Attendance App">
                   </a>
                 </figure>
-
-                <a href="https://medium.com/@moradiyayash9962/how-i-built-a-faculty-attendance-android-app-with-firebase-d80781d0f2f3" target="_blank" class="card-tag">Android Appication Development</a>
-
+                <a href="https://medium.com/@moradiyayash9962/how-i-built-a-faculty-attendance-android-app-with-firebase-d80781d0f2f3" class="card-tag" target="_blank">Android Application Development</a>
                 <h3 class="card-title">
                   <a href="https://medium.com/@moradiyayash9962/how-i-built-a-faculty-attendance-android-app-with-firebase-d80781d0f2f3" target="_blank">How I Built a Faculty Attendance App with Firebase</a>
                 </h3>
-
               </div>
             </li>
-
+      
           </ul>
-
         </div>
       </section>
-
-    </article>
-  </main>
-
+      
 
 <!-- #FOOTER -->
 <footer class="footer">
